@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<title>start clocks</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+<meta name="description" content="chess clock" />
+<meta name="keywords" content="chess,clock" />
+<meta name="theme-color" content="#444444" />
+<link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<link rel="manifest" href="manifest.json" />
+</head>
+<body>
+
+<div id="time_zone"  class="solo">
+<!--timers goes in here-->
+</div>
+
+<button id="add_timer">
+      <i class="material-icons">add</i>
+</button>
+
+<div id="form" style="display:none">
+      <div id="tim">
+      <label>
+      Hrs            
+      </label>
+      <input type="text" id="hrs" class="input" placeholder="00"/>
+
+      <label>
+      Mins            
+      </label>
+      <input type="text" id="mins" class="input" placeholder="00" />
+      
+      <label>
+      Secs
+      </label>
+      <input type="text" id="secs" class="input" placeholder="00"/>
+      </div>
+
+      <div id="titles">
+      <label>
+      Task Title
+      </label>
+      <input type="text" id="title" placeholder="task" />
+      </div>
+
+      <button id="submit">
+            <i class="material-icons">add_alarm</i>
+      </button>
+</div>
+
+
+<script src="scr.js"></script>
+</body>
+</html>
