@@ -13,6 +13,9 @@ window.onload = ()=>{
 }
 }
 
+window.onscroll = _=>{
+	//handle scroll event to make the add timer button toggle
+}
 // Getting DOM Elements 
 
 // const remote = require("electron").remote;
