@@ -79,6 +79,7 @@ i{
     flex-direction: column;
     padding : 50px;
     margin : 20px;
+    max-height: 50%;
 }
 
 p{
@@ -118,8 +119,8 @@ p{
     justify-content: center;
     top : 0px;
     text-align: center;
-    left : 0px;
-    width : 100%;
+    left : 400px;
+    width : 40%;
     height : 60%;
     padding : 20px;
     background : #ddd;
@@ -128,7 +129,8 @@ p{
 #submit{
     position : relative;
     bottom : 0px;
-    width : 30%;
+    width : 21%;
+    padding : 20px;
     text-align: center;
 }
 
@@ -152,6 +154,7 @@ p{
 .input{
     flex : 1;
     min-width : 50px;
+    max-width: 100px;
     font-family : consolas;
     color : #444;
     height : 50px;
@@ -189,5 +192,10 @@ label{
         padding : 10px;
         left : 0px;
         height : 50%;
+    }
+
+    #submit{
+        padding : 20px;
+        width : 26.5%;
     }
 }

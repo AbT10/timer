@@ -1,11 +1,12 @@
 // Service worker registration
+let reg;
 
 window.onload = ()=>{
 	if(navigator.serviceWorker){
 		console.log("Registering Service Worker!");
-		navigator.serviceWorker.register('sw2.js')
-		.then((reg)=>{
-			console.log("Successfully Registered Service Worker!" + reg);
+		reg = navigator.serviceWorker.register('sw2.js')
+		.then((r)=>{
+			console.log("Successfully Registered Service Worker!" + r);
 		})
 		.catch((err)=>{
 			console.log("An Error Occured while registering service worker.");
@@ -13,21 +14,12 @@ window.onload = ()=>{
 }
 }
 
-window.onscroll = _=>{
-	//handle scroll event to make the add timer button toggle
-}
-// Getting DOM Elements 
-
-// const remote = require("electron").remote;
-// const ctrl = remote.require("./main.js"); 
-
 const zone = document.getElementById("time_zone");
 let timers = [];
 const activ_timrs = document.getElementsByClassName("timer");
 
 const add_timer = document.getElementById("add_timer");
 add_timer.addEventListener("click",_=>{
-	// ctrl.open();
 	toggle_form();
 });
 
@@ -130,15 +122,16 @@ class Timers{
 		let timer = setInterval(_=>{
 			if(this.min !== 0 || this.sec !== 0 || this.hrs !== 0){
 				if(this.sec === 0 && this.min !== 0){
-					this.sec = 60;
-					this.min -= 1;
+					this.sec = 59;
+					this.min--;
 				}
-				if(this.min === 0 && this.hrs !== 0){
-					this.min = 60;
-					this.hrs -= 1;
+				else if((this.min === 0 && this.sec === 0) && this.hrs !== 0){
+					this.hrs--;
+					this.min = 59;
+					this.sec = 59;
 				}
 				else{
-					this.sec -= 1;
+					this.sec--;
 				}
 			}
 			else{
@@ -159,7 +152,6 @@ function get_vals(){
 	let min = document.getElementById("mins").value ? parseInt(document.getElementById("mins").value) : 0;
 	let sec = document.getElementById("secs").value ? parseInt(document.getElementById("secs").value) : 0;
 	let title = document.getElementById("title").value ? document.getElementById("title").value : "Stuff";
-	// toggle_form();
 	if(hrs || min || sec){
 		timers.push(new Timers({hrs,min,sec,title: title}));
 		if(timers.length > 1){
@@ -169,7 +161,6 @@ function get_vals(){
 	else{
 		return false;
 	}
-	// console.log(timers);
 }
 
 function toggle_form(){
