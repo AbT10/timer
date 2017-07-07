@@ -1,12 +1,12 @@
 {
-  "name" : "chess clock",
-  "short_name" : "chess clock",
+  "name" : "timetron",
+  "short_name" : "timetron",
   "icons" : [{
     "src" : "icon.png",
     "sizes" : "144x144"
   }],
 "start_url" : "index.html",
 "display" : "fullscreen",
-"background_color" : "#444444",
-"theme_color" : "#444444"
+"background_color" : "#008382",
+"theme_color" : "#008882"
 }
